@@ -310,7 +310,7 @@ services:
       - data-pipeline
 
   jupyter:
-    image: jupyter/scipy-notebook:latest
+    image: jupyter/pyspark-notebook:latest
     ports:
       - "8888:8888"
     volumes:
