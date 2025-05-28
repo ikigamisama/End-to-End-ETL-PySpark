@@ -1,0 +1,23 @@
+{"timestamp":"2025-05-28T09:17:09.413622","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-05-28T09:17:09.414249","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/ETL_dags.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-05-28T09:17:12.537060Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:17:12.730158Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:17:34.021554Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:17:34.183362Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:17:35.885310Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:17:36.027981Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:04.367970Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:04.488560Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:06.149839Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:06.278645Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:07.917560Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:08.087732Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:09.811987Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:09.975187Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:11.765409Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:11.880616Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:13.572607Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:13.713661Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:15.354394Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:15.494728Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T09:18:24.477595","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

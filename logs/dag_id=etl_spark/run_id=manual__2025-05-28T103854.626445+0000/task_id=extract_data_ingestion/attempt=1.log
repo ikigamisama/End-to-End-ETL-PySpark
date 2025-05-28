@@ -1,0 +1,23 @@
+{"timestamp":"2025-05-28T10:39:01.326318","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-05-28T10:39:01.327476","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/ETL_dags.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-05-28T10:39:04.477978Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:04.611870Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:06.178788Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:06.318503Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:07.827679Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:07.950094Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:27.907089Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:28.029563Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:48.604132Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:48.724431Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:50.445309Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:50.572842Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:52.186401Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:39:52.322496Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:14.102440Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:14.267942Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:35.047080Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:35.185084Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:57.496827Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:40:57.627037Z","level":"info","event":"⬆️  Uploaded to MinIO: bronze/data/raw/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T10:41:06.040550","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

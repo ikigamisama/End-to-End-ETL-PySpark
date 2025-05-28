@@ -1,0 +1,31 @@
+{"timestamp":"2025-05-28T08:57:02.102037","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-05-28T08:57:02.102592","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/ETL_dags.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-05-28T08:57:04.048726Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:04.197866Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_1.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:05.459941Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:05.623347Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_2.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:17.380350Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:17.497527Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_3.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:18.868702Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:19.292010Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_4.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:20.613378Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:20.765424Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_5.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:22.047411Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:22.235765Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_6.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:23.569692Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:23.718897Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_7.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:25.188163Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:25.316515Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_8.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:26.638239Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:26.781030Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_9.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:28.064563Z","level":"info","event":"✅ Downloaded https://tdhghaslnufgtzjybhhf.supabase.co/storage/v1/object/public/datasets/Retail/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:28.193965Z","level":"info","event":"⬆️  Uploaded to MinIO: data/raw/retail_data_10.csv","chan":"stdout","logger":"task"}
+{"timestamp":"2025-05-28T08:57:30.596579Z","level":"error","event":"25/05/28 08:57:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:30.804327Z","level":"error","event":"Setting default log level to \"WARN\".","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:30.804861Z","level":"error","event":"To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:34.984063Z","level":"error","event":"25/05/28 08:57:34 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:39.888501Z","level":"error","event":"25/05/28 08:57:39 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:39.968573Z","level":"error","event":"25/05/28 08:57:39 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:40.437060Z","level":"error","event":"25/05/28 08:57:40 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-05-28T08:57:45.779304","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-05-28T08:57:46.232688Z","level":"error","event":"\r[Stage 1:>                                                          (0 + 1) / 1]","chan":"stderr","logger":"task"}

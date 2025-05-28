@@ -1,0 +1,13 @@
+duckdb
+fastapi
+uvicorn[standard]
+apache-airflow-providers-amazon
+apache-airflow-providers-apache-spark
+pyspark==3.5.1
+s3fs
+boto3
+python-dotenv
+SQLAlchemy
+pandas
+pyarrow
+fsspec
