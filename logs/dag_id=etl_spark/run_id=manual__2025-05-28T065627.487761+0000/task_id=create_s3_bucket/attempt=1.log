@@ -1,7 +1,0 @@
-{"timestamp":"2025-05-28T06:56:35.240473","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
-{"timestamp":"2025-05-28T06:56:35.241579","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/ETL_dags.py","logger":"airflow.models.dagbag.DagBag"}
-{"timestamp":"2025-05-28T06:56:36.317965","level":"info","event":"Secrets backends loaded for worker","count":1,"backend_classes":["EnvironmentVariablesBackend"],"logger":"supervisor"}
-{"timestamp":"2025-05-28T06:56:36.380048","level":"info","event":"Connection Retrieved 'aws_default'","logger":"airflow.hooks.base"}
-{"timestamp":"2025-05-28T06:56:36.380466","level":"info","event":"AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from extra.","logger":"airflow.providers.amazon.aws.utils.connection_wrapper.AwsConnectionWrapper"}
-{"timestamp":"2025-05-28T06:56:37.047520","level":"info","event":"Bucket \"etl-dag\" does not exist","logger":"airflow.task.hooks.airflow.providers.amazon.aws.hooks.s3.S3Hook"}
-{"timestamp":"2025-05-28T06:56:37.060545","level":"info","event":"Created bucket with name: etl-dag","logger":"airflow.task.operators.airflow.providers.amazon.aws.operators.s3.S3CreateBucketOperator"}
