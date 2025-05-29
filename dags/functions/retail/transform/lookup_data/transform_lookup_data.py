@@ -83,7 +83,7 @@ def main():
 
         categories_df = spark.createDataFrame(categories_with_id)
         categories_df.write.mode("overwrite").parquet(
-            "s3a://etl-dag/silver/data/lookup/cateogry/")
+            "s3a://etl-dag/silver/data/lookup/category/")
 
         print("Creating Dataframe for Brands Table")
         brands = raw_data.select("Product_Brand").dropna(
