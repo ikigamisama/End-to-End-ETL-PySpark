@@ -10,7 +10,8 @@ from airflow.providers.amazon.aws.operators.s3 import S3CreateBucketOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from airflow.utils.task_group import TaskGroup
 
-from functions.retail.extract import data_ingestion
+from functions.retail.extract.load_data import data_ingestion
+from functions.retail.load.duck_db import execute_duckdb_etl
 
 load_dotenv()
 
@@ -62,40 +63,85 @@ with DAG(
         python_callable=data_ingestion
     )
 
-    with TaskGroup("data_transform_extract_split", tooltip="Splitting the retail data into customer, transaction, and product datasets") as data_transform_extract_split:
-        split_customer_task = SparkSubmitOperator(
-            task_id="split_customer",
-            application="/opt/airflow/dags/spark_jobs/split_customer.py",
+    merge_data_ingestion = SparkSubmitOperator(
+        task_id="merge_data_ingestion",
+        application="/opt/airflow/dags/functions/retail/extract/merge_data_extraction.py",
+        conn_id="spark_default",
+        verbose=True,
+        name="merge-data-ingestion",
+        conf=s3_config,
+        driver_memory="2g",
+        deploy_mode="client"
+    )
+
+    transform_init = EmptyOperator(task_id="transform_method")
+
+    lookup_data_task = SparkSubmitOperator(
+        task_id="lookup_data_task",
+        application="/opt/airflow/dags/functions/retail/transform/lookup_data/transform_lookup_data.py",
+        conn_id="spark_default",
+        verbose=True,
+        name="transform_lookup_data",
+        conf=s3_config,
+        driver_memory="2g",
+        deploy_mode="client"
+    )
+
+    with TaskGroup("core_entity_transform_task", tooltip="Spliting the Data into a Core Entity RDBMS Type") as core_entity_transform_task:
+        transform_address = SparkSubmitOperator(
+            task_id="transform_address",
+            application="/opt/airflow/dags/functions/retail/transform/core_entity_data/transform_address_core.py",
             conn_id="spark_default",
             verbose=True,
-            name="split-customer-local",
+            name="transform_core_address_data",
             conf=s3_config,
             driver_memory="2g",
             deploy_mode="client"
         )
 
-        split_transaction_task = SparkSubmitOperator(
-            task_id="split_transaction",
-            application="/opt/airflow/dags/spark_jobs/split_transaction.py",
+        transform_customers = SparkSubmitOperator(
+            task_id="transform_customers",
+            application="/opt/airflow/dags/functions/retail/transform/core_entity_data/transform_customers_core.py",
             conn_id="spark_default",
             verbose=True,
-            name="split-transaction-local",
+            name="transform_core_customers_data",
             conf=s3_config,
             driver_memory="2g",
             deploy_mode="client"
         )
 
-        split_product_task = SparkSubmitOperator(
-            task_id="split_product",
-            application="/opt/airflow/dags/spark_jobs/split_product.py",
+        transform_products = SparkSubmitOperator(
+            task_id="transform_products",
+            application="/opt/airflow/dags/functions/retail/transform/core_entity_data/transform_products_core.py",
             conn_id="spark_default",
             verbose=True,
-            name="split-product-local",
+            name="transform_core_products_data",
             conf=s3_config,
             driver_memory="2g",
-            deploy_mode="client",
+            deploy_mode="client"
         )
 
-        split_customer_task >> split_transaction_task >> split_product_task
+        transform_transactions = SparkSubmitOperator(
+            task_id="transform_transactions",
+            application="/opt/airflow/dags/functions/retail/transform/core_entity_data/transform_transactions_core.py",
+            conn_id="spark_default",
+            verbose=True,
+            name="transform_core_transactions_data",
+            conf=s3_config,
+            driver_memory="2g",
+            deploy_mode="client"
+        )
 
-    create_s3_bucket >> extract_init >> extract_data_ingestion >> data_transform_extract_split
+        transform_address >> transform_customers >> transform_products >> transform_transactions
+
+    load_init = EmptyOperator(task_id="load_method")
+
+    duck_db_load = PythonOperator(
+        task_id='duck_db_load',
+        python_callable=execute_duckdb_etl
+    )
+
+    create_s3_bucket >> extract_init
+    extract_init >> extract_data_ingestion >> merge_data_ingestion >> transform_init
+    transform_init >> lookup_data_task >> core_entity_transform_task >> load_init
+    load_init >> duck_db_load

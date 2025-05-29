@@ -1,6 +1,4 @@
 import sys
-from pyspark.sql.functions import col, avg, sum, countDistinct
-
 from pyspark.sql import SparkSession
 
 
@@ -8,7 +6,7 @@ def main():
     spark = None
     try:
         spark = SparkSession.builder \
-            .appName('split_product') \
+            .appName('split_customer') \
             .config("spark.hadoop.fs.s3a.endpoint", "http://minio:9000") \
             .config("spark.hadoop.fs.s3a.access.key", "minioLocalAccessKey") \
             .config("spark.hadoop.fs.s3a.secret.key", "minioLocalSecretKey123") \
@@ -20,32 +18,27 @@ def main():
             .config("spark.hadoop.fs.s3a.multipart.size", "104857600") \
             .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer") \
             .getOrCreate()
+        spark._jsc.hadoopConfiguration().set("spark.app.name", "split_transactions")
 
-        # Read data
-        df = spark.read.csv("s3a://etl-dag/bronze/data/retail_data.csv",
-                            header=True, inferSchema=True)
+        print("Reading data from S3...")
+        s3_input_path = "s3a://etl-dag/bronze/data/raw/retail_data_*.csv"
 
-        # Static product info
-        product_static = df.select(
-            col("products").alias("product_name"),
-            "Product_Category",
-            "Product_Brand",
-            "Product_Type"
-        ).dropDuplicates()
+        df = spark.read \
+            .option("header", "true") \
+            .option("inferSchema", "true") \
+            .csv(s3_input_path)
 
-        # Aggregated metrics
-        product_agg = df.groupBy("products").agg(
-            countDistinct("Transaction_ID").alias("total_transactions"),
-            countDistinct("Customer_ID").alias("unique_customers"),
-            sum("Total_Amount").alias("total_revenue"),
-            avg("Ratings").alias("avg_rating")
-        ).withColumnRenamed("products", "product_name")
+        print(f"Total records: {df.count()}")
 
-        # Write outputs
-        product_static.write.mode("overwrite").parquet(
-            "s3a://etl-dag/silver/data/products/static/")
-        product_agg.write.mode("overwrite").parquet(
-            "s3a://etl-dag/silver/data/products/aggregated/")
+        s3_output_path = "s3a://etl-dag/bronze/data/retail_data_parquet/"
+
+        print("Writing merged data to S3...")
+        df.coalesce(1) \
+            .write \
+            .mode("overwrite") \
+            .parquet(s3_output_path)
+
+        print("Data merge completed successfully!")
 
     except Exception as e:
         print(f"Error: {str(e)}")

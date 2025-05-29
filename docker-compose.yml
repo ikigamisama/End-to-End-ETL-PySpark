@@ -315,6 +315,7 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/home/jovyan/work
+      - ./jars:/home/jovyan/jars
     depends_on:
       - postgres
     environment:
